@@ -51,4 +51,3 @@ Durante a trilha, são abordados conceitos fundamentais e avançados de React, T
  ┣ 📂 projetos-react
  ┣ 📂 anotacoes
  ┗ 📜 README.md
-```
