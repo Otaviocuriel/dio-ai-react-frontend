@@ -23,3 +23,21 @@ node.js permite o uso do JavaScript em computadores e servidores. E construído 
 A importância do node.js para o desenvolvimento de aplicações React
 
 node.js + React -> Ambiente de execução JavaScript, Uso de ferramentas como create-react-app e vite, Gerenciamento de pacotes e Desenvolvimento local
+
+Instalando e configurando o VScode
+
+Gerenciador de pacote
+Ferramenta que permite a instalação gerenciamento e compartilhamento de bibliotecas de código
+
+bibliotecas externas, bibliotecas externas e bibliotecas externas -> seu projeto de código
+
+Seu projeto de código-------gerenciador de pacotes solicita a dependência(biblioteca e pacotes)--------A, B, C, D (Loja de bibliotecas)-----------biblioteca D v4.3.2(Ultima versão)-----------faz a instalação das dependências no projeto(pasta node_modules)--------Seu projeto de código
+
+Introdução ao npm
+Node
+Package
+Maneger
+gerenciador de pacotes padrão do Node.js
+
+Utilizando comandos do npm
+
