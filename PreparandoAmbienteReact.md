@@ -41,3 +41,16 @@ gerenciador de pacotes padrão do Node.js
 
 Utilizando comandos do npm
 
+Node Package Execute(npx)
+Node
+Package
+Maneger
+gerenciador de pacotes padrão do Node.js
+
+Disponibiliza uma ferramenta chamada npx, usada para executar pacotes sem instala-los permanentemante
+
+npm-> Ferramenta usada para instalar e gerenciar pacotes Node.js. Ele e usado para instalar pacotes localmente em um projeto ou globalmente no sistema./npx-> Executavel no npm que permite executar pacotes Node.js temporariamente. Ele e util para rodar comandos de pacotes especificos sem a necessidade de instala-los previamente.
+management/execute
+
+Gerenciador de pacotes Yarn
+
