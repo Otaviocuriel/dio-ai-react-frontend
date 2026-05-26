@@ -49,3 +49,29 @@ React é multiplataformas -> Aplicações web com react.js, Aplicações mobile 
 
 Atualizações
 
+Vantagens do React
+
+-Consonantização;
+-Reatividade;
+-Comunidade ativa;
+-SSR(Server-Side Rendering);
+-Bibliotecas;
+-Performance.
+
+Desvantagens do React
+-Curva de aprendizado
+-Complexidade
+-Boilerplate code(Código repetitivo)
+-Decisões de arquitetura
+-Problemas de SEO(Search Engine Optimization)
+
+Evoliçao do React
+
+2013-------------
+surgiu----------React 16(Fiber)----16.3+ Context API---React 16.8+ Hooks-------React 18 SSR-----React 19
+
+Componentes
+-Redux
+-React Router
+-Styled Component
+-Material UI
