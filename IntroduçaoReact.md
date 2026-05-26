@@ -35,3 +35,17 @@ Bibliotecas desenvolvida pelo Facebook para construção de interfaces em difere
 Evolução do React
 
 Estrutura de fundamento do React
+
+Componentes com códigos de marcação
+App, HomePage, EmployeePage, Header, Header, SearchBar, EmployeeList e EmPloyeeListitem
+
+JSX -> JavaScript XMl - Extensão da sintaxe do js - js + código de marcação
+
+Componentes, interatividade e frameworks
+
+Multiplataformas
+
+React é multiplataformas -> Aplicações web com react.js, Aplicações mobile com React Native e Realidade virtual com react VR
+
+Atualizações
+
