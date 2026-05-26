@@ -75,3 +75,32 @@ Componentes
 -React Router
 -Styled Component
 -Material UI
+
+Pensando do jeito React
+
+UI: User interface, ou interface do usuario
+
+1.FilterableProductTable
+2.SearchBar
+3.ProductTable
+4.ProductCategoryRow
+5.ProductRow
+
+FilterableProductTable
+
+    SearchBar
+        ProductCategoryRow
+        ProductRow
+
+    ProductTable
+
+ Passo 1: Quebrar nosso desing em componentes
+ passo 2: Criando uma versão estatica em React
+ passo 3: Adicionando interaçoes aos componentes
+
+ Documentaçoes do React
+ legacy.reactjs.org/react.dev
+
+ Estrutura de funcionamento do React
+ vite + react
+
