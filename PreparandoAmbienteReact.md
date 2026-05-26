@@ -53,4 +53,20 @@ npm-> Ferramenta usada para instalar e gerenciar pacotes Node.js. Ele e usado pa
 management/execute
 
 Gerenciador de pacotes Yarn
+Gerenciador de pacotes alternativo ao npm
+
+Gerenciador de pacotes pnpm
+O pnpm e um gerenciador de pacotes alternativo para o Node.js cujo o nome sgnifica Performant NPM
+
+npm ou yarn
+react-> Projeto A
+react-> Projeto B
+react-> Projeto C
+react-> Projeto D
+
+pnpm
+Armazenamento global os projetos de react A, B, C e D
+
+Ferramentas online para criar projetos em React
+
 
