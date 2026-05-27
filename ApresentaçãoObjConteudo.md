@@ -117,3 +117,4 @@ Funções de esbuild com css
     Mapas de origem(source maps);
     Prefixação automática.
 
+React, babel e webpack na pratica
