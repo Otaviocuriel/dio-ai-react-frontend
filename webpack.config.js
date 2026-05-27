@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports ={
 
-    entry: "./src/index.js",
+    entry: path.resolve(__dirname, "src/index.js"),
     output: {
         path: path.resolve(__dirname, "dist"),
 
@@ -27,7 +27,7 @@ module.exports ={
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./public/index.html"
+            template: path.resolve(__dirname, "public/index.html")
         })
     ],
     resolve:{
@@ -35,7 +35,7 @@ module.exports ={
     },
     devServer:{
         static:{
-            directory: path.join(__dirname, "dist")
+            directory: path.resolve(__dirname, "dist")
         },
         port: 3000,
     },

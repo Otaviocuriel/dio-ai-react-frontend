@@ -1,4 +1,4 @@
-const app = () => {
+const App = () => {
     return (
         <div>
             <h1> Meu projeto react</h1>
@@ -6,4 +6,4 @@ const app = () => {
     );
 };
 
-export default app;
+export default App;
