@@ -77,4 +77,43 @@ Especificação para modulos em JS usada principalmente em ambientes de servidor
 ESM(ECMAScript Modules)
 Mais comumente utilizado em ambientes de navegador modernos e um algumas ferramentas de desenvolvimento front-end
 
+Processo de empacotamento(bundling)
+
+Bundling e um processo que resolve as dependências de arquivos e junta os módulos de uma aplicação dentro de pacotes para o navegador, dentro de pacotes para o navegador, para poder reduzir o numero de requisições por arquivo quando o usuário abre a pagina.
+Conforme a aplicação cresce, o seu bundle também cresse. Quanto o maior o arquivo de bundle, mais tempo demora para o site carregar para o usuário
+
+JS,JS--------------Bundler-------------JS,CSS
+CSS,TSX------------Bundler-------------JS,CSS
+TS,TSX-------------Bundler-------------JS,CSS
+
+Características dos bundlers
+
+Características que tornam os bundlers necessários: Complexidade do desenvolvimento, Dependências e bibliotecas, Otimização de carregamento e Gestão de recursos estáticos
+
+Compilador e empacotadores
+
+Quem realiza as otimizações de código: O bundler ou o compilador?
+Geralmente, são os bundlers se concentram em otimizações especificas para o processo de empacotamento e carregamento de código, enquanto os compiladores realizam otimizações mais abrangentes durante o processo de transpiração do código-fonte
+
+Conhecendo o Webpack
+Empacotador de módulos para o desenvolvimento web
+
+Conhecendo o esbuild
+Empacotador e minificador javascript
+
+O esbuild empacota o código JS em um único arquivo
+
+Funções do esbuild
+    Resolver módulos;
+    Relatar problemas de sintaxe;
+    Tree-shaking(remover funçoes nao ultilizadas);
+    Eliminar declarações de log e depuração;
+    Minificar o código;
+    Outros.
+
+Empacota de arquivos css
+Funções de esbuild com css
+    Codificação de ativos embutidos;
+    Mapas de origem(source maps);
+    Prefixação automática.
 
