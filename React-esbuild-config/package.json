@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "serve": "esbuild src/index.js --outfile=dist/bundle.js --loader:.js=jsx --bundle --minify",
     "build": "esbuild src/index.js --outfile=dist/bundle.js --loader:.js=jsx --bundle --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
