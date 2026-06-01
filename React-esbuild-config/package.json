@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "esbuild src/index.js --outfile=dist/bundle.js --loader:.js=jsx --bundle --minify",
+    "start": "esbuild src/index.js --outfile=dist/bundle.js --loader:.js=jsx --bundle --minify --serve=6767 --servedir=dist --watch",
     "build": "esbuild src/index.js --outfile=dist/bundle.js --loader:.js=jsx --bundle --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,6 +13,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@esbuild/win32-arm64": "0.28.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
   },
