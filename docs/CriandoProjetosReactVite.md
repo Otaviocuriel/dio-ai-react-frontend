@@ -20,3 +20,7 @@ Pre-Requisitos
  Segundo a documentação do Vite, eles optam pelo uso de Rollup como bundler."Apesar de esbuild ser mais rápido, a adoção da API de plugin flexível e da infraestrutura do Rollup pela Vite contribuiu fortemente para seu sucesso no ecossistema. Por enquanto, acreditamos que o Rollup oferece uma melhor compensação entre desempenho e flexibilidade."
 
 Por que usar vite? O vite visa resolver problemas de lentidao no desenvolvimento, aproveitando novas tecnologias, como os modulos ES nativos no navegador
+
+Variaveis de Ambiente
+    - import.meta.env.[nome]
+    
