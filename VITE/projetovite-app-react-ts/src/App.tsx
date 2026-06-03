@@ -7,8 +7,16 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
- console.log("Mode:")
+if(import.meta.env.DEV) {
+  console.log("MODE:", import.meta.env.MODE);
+  console.log("BASE_URL:", import.meta.env.BASE_URL);
+  console.log("PROD:", import.meta.env.PROD);
+  console.log("DEV:", import.meta.env.DEV);
+  console.log("SSR:", import.meta.env.SSR);
 
+}
+
+ 
   return (
     <>
       <section id="center">
