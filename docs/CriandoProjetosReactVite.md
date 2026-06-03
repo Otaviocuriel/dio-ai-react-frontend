@@ -54,3 +54,29 @@ Native ESM based dev server
 Server ready -(HTTP request)> entry - (Dynamic import(code split point))> Route -> Module/Module/Module
                 entry -(Dynamic import(code split point))> Route -> Module/Module
                 entry -(Dynamic import(code split point))> . . . -> . . . 
+
+Por que usar o vite?
+Atualizaçoes lentas do servidor
+
+Ediçao de um arquivo do projeto de codigo
+    - Reconstruçao de todo o pacote(Bundle) do zero e demorado
+    - Quanto maior o tamanho do projeto, mais demorado e a atualizaçao do servidor de desenvolvimento
+    - Impacta na produtividade dos desenvolvedores que estao trabalhando nos projetos
+
+Hot Module Replacement(HMR)  
+    Permite que os modulos sejam atualizados em tempo real(durante a execuçao) sem afetar o restante da pagina e sem a necessidade de recarregar a pagina no navegador, aumentando significamente a experiencia do desenvolvedor
+
+ Editor de codigo|-------Ediçao do arquivo------> Servidor HMR|---------Detecçao de mudanças------>Modulo especifico|--------Atualizaçao parcial do navegador------->Navegador
+
+Ediçao do Arquivo: Voce edita um modulo
+Detecçao de Mudanças: HMR detecta a mudança
+Atualizaçao Parcial: Somente o modulo editado (e seus dependentes diretos) e atualizado
+
+Atraves do vite temos atualizaçoes mais rapidas do servidor
+No vite, a substituiçao de modulo em tempo real(HMR) e realizada por meio de ESM nativo 
+
+Antes da atualizaçao do codigo
+Modulo A|-------->Modulo B|-------->Modulo C|
+
+Depois da atualizaçao do codigo sem HMR
+Modulo A|------>Modulo B------>Modulo c|
