@@ -80,3 +80,9 @@ Modulo A|-------->Modulo B|-------->Modulo C|
 
 Depois da atualizaçao do codigo sem HMR
 Modulo A|------>Modulo B------>Modulo c|
+
+O vite utiliza cabecalhos HTTP para acelerar recarregamentos completos da pagina nos servidores de desenvolvimento
+Mais uma vez, permitindo que o navegador faça mais trabalho por nos
+
+Em produçao, o vite realiza o empacotamento dos arquivos assim como outras ferramentas
+Mesmo que os modulos ECMAScript nativos sejam amplamente suportados agora, enviar ESM desagrupados para produçao ainda e ineficiente;
