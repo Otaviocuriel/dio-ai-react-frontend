@@ -13,6 +13,8 @@ if(import.meta.env.DEV) {
   console.log("PROD:", import.meta.env.PROD);
   console.log("DEV:", import.meta.env.DEV);
   console.log("SSR:", import.meta.env.SSR);
+  console.log(import.meta.env.VITE_API_URL);
+  console.log(import.meta.env.VITE_DB_PASSWORD);
 
 }
 
