@@ -13,3 +13,9 @@ Pre-requisitos:
     -JS e funçoes
     - Introduçao React
     - Config. Ambiente React
+
+Componentes
+OS componentes em React sao blocos de conteudo da interface do usuario (UI) que tem uma unica responsabilidade e tem como objetivo a reutilizaçao e organizaçao dos codigos do projeto  
+
+Componentes sao basicamente compostos por..
+JavaScript, JSX(HTML) e CSS
