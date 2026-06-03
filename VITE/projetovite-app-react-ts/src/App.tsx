@@ -1,9 +1,10 @@
+import Profile from './components/Profile'
 import './App.css'
 
 function App() {
   return (
     <h1>
-      Hello world
+      <Profile />
     </h1>
   )
 }  
