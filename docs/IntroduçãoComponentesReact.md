@@ -19,3 +19,6 @@ OS componentes em React sao blocos de conteudo da interface do usuario (UI) que 
 
 Componentes sao basicamente compostos por..
 JavaScript, JSX(HTML) e CSS
+
+Componentes Funcionais / Componentes de classe
+
