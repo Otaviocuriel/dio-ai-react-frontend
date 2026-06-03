@@ -86,3 +86,6 @@ Mais uma vez, permitindo que o navegador faça mais trabalho por nos
 
 Em produçao, o vite realiza o empacotamento dos arquivos assim como outras ferramentas
 Mesmo que os modulos ECMAScript nativos sejam amplamente suportados agora, enviar ESM desagrupados para produçao ainda e ineficiente;
+
+Suporte aos navegadores
+Navegadores antigos podem ser suportados atraves do plugin oficial @vitejs/plugin-legacy, que adiciona suporte para navegadores legados
