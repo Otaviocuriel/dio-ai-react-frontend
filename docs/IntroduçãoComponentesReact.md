@@ -22,3 +22,9 @@ JavaScript, JSX(HTML) e CSS
 
 Componentes Funcionais / Componentes de classe
 
+Estrutura de um componente
+    1. Criar a funçao e o conteudo
+    2. Exportar e importar
+    3. Finalizar a estrutura
+    4. Adicionar interatividade
+
