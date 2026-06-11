@@ -1,3 +1,4 @@
+import { Skills } from './Skills'
 
 const Profile: React.FC = () => {
     return (
@@ -16,6 +17,7 @@ const Profile: React.FC = () => {
          TI
         </b>
        </p> 
+       <Skills />
        </div>
          
     )
