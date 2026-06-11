@@ -1,8 +1,9 @@
+import { Fragment } from "react/jsx-runtime";
 import { HardSkills } from "./HardSkills";
 import { SoftSkills } from "./SoftSkills";
 export function  Skills(){
     return(
-       <div> 
+       <Fragment>
             <h3>
                 Hard Skills:
             </h3>
@@ -11,7 +12,7 @@ export function  Skills(){
                 Soft Skills:
             </h3>
             <SoftSkills />
-        </div>
+        </Fragment> 
     )
 }
 
