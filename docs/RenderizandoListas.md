@@ -1,0 +1,1 @@
+Aprenda como exibir uma lista de componentes similares, de forma dinâmica, utilizando React juntamente com métodos JS
