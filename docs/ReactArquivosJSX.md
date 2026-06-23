@@ -13,3 +13,31 @@ Js e funções
 Introdução React
 Componentes funcionais
 O que você precisa saber para entender melhor as aulas deste curso
+
+Html ------Conteúdo-------------<div>     <p></p><from></from></div>
+
+CSS --------------------Estilos
+
+JS --------------------Logica---------- isLoggedIn() {...}
+onClick() {...}
+onSubmit() {...}
+
+Componente Sidebar 
+Sidebar(){
+    if (isLoggendIn()){
+        <p>Welcome</p>
+    } else{
+        </From>
+    }
+}
+
+Componente From
+From() {
+    onClick() {...}
+    onSubmit() {...}
+
+    <From onSubmit>
+    <input onClick>
+    <input onClick/>
+    </From>
+}
