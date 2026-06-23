@@ -13,3 +13,6 @@ pré-requisitos
 Introdução React
 Componentes funcionais
 Arquivos jsx
+
+Propriedades
+Componentes utilizam propriedades para se comunicar entre si. Elas nos permitem passar qualquer valor ou expressão JS de um componente para outro.
