@@ -39,3 +39,8 @@ Onde você pode causar efeitos colaterais
     Event Handlers: Manipuladores de eventos;
     Event Handlers: São funções que executam ao realizar alguma ação:
     Hook useEffect 
+
+Vantagens em manter os componentes puros
+    1 Os componentes podem ser executados em diferentes ambientes
+    2 Melhora no desempenho dos componentes
+    3 Torna-se seguro para o React parar o processo de renderização     
