@@ -10,3 +10,16 @@ Mutaçao Local & Componentes
 
 Entender o conceito e uso de funçoes puras dentro da computaçao, alem de aprender como criar e as vantagens de componentes React usando essa abordagem
 
+Funções puras / pure functions
+1 Cuida da sua própria vida
+    Não altera objetos ou variáveis que já existem antes de ela ser chamada.
+2 Mesmas Entradas, Mesmas Saídas
+    Passados os mesmos argumentos, mesmos retornos
+
+Exemplos de função pura
+    Um exemplo muito comum das funções puras são formulas matemáticas 
+    Y = 2x -- X2 Y4, X3 Y6, X4 Y8
+
+function double(number){
+    return 2 * number;
+}   
