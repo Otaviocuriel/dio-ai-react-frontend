@@ -23,3 +23,14 @@ Exemplos de função pura
 function double(number){
     return 2 * number;
 }   
+
+Três entradas que um componente pode ler enquanto renderiza:
+    Propriedades(props);
+    Estados(states);
+    Contextos(context);
+   
+Estrutura de um componente
+    P1: Criar função do componente
+    P2: Exportar e importar a função criada
+    P3: Finalizar a estrutura do componente
+    P4: Adicionar interações
