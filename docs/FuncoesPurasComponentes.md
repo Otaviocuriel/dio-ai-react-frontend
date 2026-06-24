@@ -34,3 +34,8 @@ Estrutura de um componente
     P2: Exportar e importar a função criada
     P3: Finalizar a estrutura do componente
     P4: Adicionar interações
+
+Onde você pode causar efeitos colaterais
+    Event Handlers: Manipuladores de eventos;
+    Event Handlers: São funções que executam ao realizar alguma ação:
+    Hook useEffect 
