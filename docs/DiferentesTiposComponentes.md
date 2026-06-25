@@ -19,3 +19,15 @@ Smart Components / Dumb Components
     
 Smart Components
 Logica e Estado da aplicação gerenciam dados, cálculos e eventos para uma experiencia integrada do usuário    
+
+Dumb Components
+Apenas Exibição. Recebem dados e funções como props para renderizar a interface do usuário
+
+Componentes de ordem superior
+    O HOC envolve o componente original e adiciona funcionalidades adicionais a tela sem modificar diretamente o código do componente
+
+    Componente + HOC = Componente com novas funcionalidades ou dados
+        Reutilização;
+        Flexibilidade;
+        Separação de Responsabilidades;
+        Composição;
