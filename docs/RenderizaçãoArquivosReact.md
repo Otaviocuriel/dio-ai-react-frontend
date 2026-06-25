@@ -34,3 +34,7 @@ Arvore de Renderização
 
 Arvore de dependência de módulos
     Uma arvore de dependência de módulos no react e uma estrutura que mostra as relações entre os  diferentes módulos de um aplicativo React, indicando como eles dependem um dos outros para funcionar corretamente
+
+Processo de renderização
+    O processo de servir a UI e dividido em três etapas:
+        Trigger, Render e Commit    
