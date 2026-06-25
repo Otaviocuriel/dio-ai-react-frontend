@@ -3,11 +3,7 @@ function App() {
   return (
     <>
     <h1>
-      Hello, Vite 
-
-
-
-      vdafhagfhagfhagfhasgfhagçhfasfgçahs
+      Hello, Vite
     </h1>
     </>
   )
