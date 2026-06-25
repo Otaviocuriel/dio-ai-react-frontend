@@ -31,3 +31,6 @@ Arvore de Renderização
     Component A ------ React A-> B-> C ------ React DOM
     Component B ------ React A-> B-> C ------ React DOM
     Component C ------ React A-> B-> C ------ React DOM
+
+Arvore de dependência de módulos
+    Uma arvore de dependência de módulos no react e uma estrutura que mostra as relações entre os  diferentes módulos de um aplicativo React, indicando como eles dependem um dos outros para funcionar corretamente
