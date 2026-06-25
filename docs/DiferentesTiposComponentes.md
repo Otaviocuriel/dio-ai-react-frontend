@@ -14,3 +14,6 @@ Pré-requisitos
     Propriedades no react
     Conceito de componentes
     Estados
+
+Smart Components / Dumb Components
+    
