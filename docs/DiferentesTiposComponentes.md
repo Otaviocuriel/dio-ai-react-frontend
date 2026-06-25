@@ -17,3 +17,5 @@ Pré-requisitos
 
 Smart Components / Dumb Components
     
+Smart Components
+Logica e Estado da aplicação gerenciam dados, cálculos e eventos para uma experiencia integrada do usuário    
