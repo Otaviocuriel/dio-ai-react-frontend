@@ -38,3 +38,18 @@ Arvore de dependência de módulos
 Processo de renderização
     O processo de servir a UI e dividido em três etapas:
         Trigger, Render e Commit    
+
+Passo 1:
+Disparando uma Renderização
+
+Renderização inicial:        
+import Image from './Image.js';
+import { createRoot } from 'react-dom/client';
+
+const root = createRoot(Document.getElementById('root'))
+root.render(<Image />);
+
+Passo 1:
+Disparando uma renderização
+Renderizações quando há estados atualizados no componente
+estado atualiza... ...triggrs...  ...render
