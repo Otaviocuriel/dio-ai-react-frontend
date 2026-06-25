@@ -16,3 +16,18 @@ O que você precisa saber para entender melhor as aulas deste curso
     Introdução React
     Componentes & Propriedades
     Estados(States)
+
+Arvore de Renderização
+
+Data Object Model
+    A DOM e uma estrutura hierárquica que representa uma pagina web e possibilita aos programadores interagir com seus elementos usando JavaScript    
+
+CSS Object Model
+    A CSSOM e uma representação em arvore dos estilos CSS de uma pagina web, permitindo aos desenvolvedores acessa-los e modifica-los com JS semelhante a DOM para elementos html  
+
+Arvore de Renderização
+    Reat organiza seus componentes em estruturas de arvore para gerenciar e modelar o relacionamento entre os componentes em uma aplicação
+
+    Component A ------ React A-> B-> C ------ React DOM
+    Component B ------ React A-> B-> C ------ React DOM
+    Component C ------ React A-> B-> C ------ React DOM
