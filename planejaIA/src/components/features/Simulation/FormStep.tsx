@@ -3,7 +3,8 @@ import { Input, type InputProps } from '@/components/shared/Input'
 import { ArrowLeft, ArrowRight, type LucideIcon } from 'lucide-react'
 import { Form } from 'react-router-dom'
 
-interface FormStepProps {
+export interface FormStepProps {
+  id: string
   icon: LucideIcon
   title: string
   question: string
