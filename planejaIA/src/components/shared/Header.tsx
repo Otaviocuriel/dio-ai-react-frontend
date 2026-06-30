@@ -1,9 +1,12 @@
-import { Clock, TrendingUp, Wallet } from 'lucide-react'
+import { Clock, Moon, Sun, TrendingUp, Wallet } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { Button } from './Button'
+import { Divider } from './Divider' // 💡 IMPORTANTE: Ajuste o caminho da pasta onde está o seu Divider!
+import { UseTheme } from '@/hooks/UseTheme'
 
 export function Header() {
   const navigate = useNavigate()
+  const { theme, toggleTheme } = UseTheme()
 
   return (
     <header className="border-b border-(--border) px-6 py-3">
@@ -20,15 +23,25 @@ export function Header() {
         </div>
 
         {/* Actions Buttons */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2"> {/* 💡 Dica: Mudei o gap de 1 para 2 para dar mais espaço */}
           <Button variant="secondary" icon={TrendingUp} onClick={() => void navigate('/')}>
             <span className="hidden sm:inline">Nova Simulação</span>
           </Button>
+          
           <Button variant="ghost" icon={Clock} onClick={() => void navigate('/historico')}>
             <span className="hidden sm:inline">Histórico</span>
           </Button>
+
+          <Divider orientation="vertical" spacing={8} className="h-5" />
+
+          <Button
+            aria-label={`Mudar para tema ${theme === 'light' ? 'escuro' : 'claro'}`}
+            variant="ghost"
+            icon={theme === 'light' ? Moon : Sun}
+            onClick={toggleTheme}
+          />
         </div>
-      </nav>
+      </nav> 
     </header>
   )
 }
