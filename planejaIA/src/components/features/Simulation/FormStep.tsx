@@ -18,7 +18,7 @@ export interface FormStepProps {
 
 interface ActionsButtonProps {
   onBack: () => void
-  onNext: () => void
+  onNext: (value: string) => void
   HideBackButton?: boolean
 }
 
@@ -36,8 +36,12 @@ export function FormStep({
 
   const handleSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (!inputValue) return
-    onNext()
+    if (!inputValue) {
+      return
+    }
+       
+
+    onNext(inputValue)
   }
 
   return (

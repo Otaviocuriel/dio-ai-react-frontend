@@ -85,4 +85,9 @@ export const simulationFormSteps = [
       emojiIcon: '✨',
     },
   },
-]
+] satisfies FormStepProps[]
+
+export type SimulationFormData = Record<(
+  typeof simulationFormSteps) [number]['id'],
+  string
+  >
