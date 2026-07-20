@@ -1,49 +1,53 @@
 import { Card } from '@/components/features/Simulation/SimulationResults/Card'
 import { PageHero } from '@/components/shared/PageHero'
-import type { SimulationFormData } from '@/data/simulation'
+import type { SimulationRecord } from '@/data/simulation' // Importação atualizada aqui
+import { useSimulationStorage } from '@/hooks/useSimulationStorage'
 import { calcMonthlySavings } from '@/utils/simulation'
 import { CalendarClock, CreditCardIcon, Goal, Landmark, PiggyBank, Wallet } from 'lucide-react'
-
-const mockSimulationData: SimulationFormData = {
-    income: 'R$ 5.000,00',
-    expenses: 'R$ 2.000,00',
-    debts: 'R$ 500,00',
-    goalName: 'Viagem para o Japão',
-    goalAmount: 'R$ 15.000,00',
-    goalDeadLine: '12',
-}
+import { useParams } from 'react-router-dom'
 
 export function SimulandoResultsPage() {
-    const simulationData: SimulationFormData = mockSimulationData
-    const monthlySavings = calcMonthlySavings(simulationData)
+  const { id } = useParams()
+  const { getFormData } = useSimulationStorage()
+  
+  const data = id ? getFormData(id) : null 
+
+  if (!data) {
+    return (
+      <div className="flex h-96 items-center justify-center">
+        <p className="text-lg font-semibold text-red-500">Simulação não encontrada.</p>
+      </div>
+    )
+  }
+
+  const monthlySavings = calcMonthlySavings(data)
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-10 sm:py-14">
       <PageHero
         title="Resultado da sua simulação"
-        subtitle="Com base no seu perfil financeiro e objetivos "
+        subtitle="Com base no seu perfil financeiro e objetivos"
       />
       
-      {/* Primeiro Bloco: Grid Principal de Metas */}
       <div className="mb-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
         <Card
           icon={Goal}
           label="Custo de Meta"
-          value={simulationData.goalName}
-          subtitle={'Viagem para o Japão'}
+          value={data.goalAmount}
+          subtitle={data.goalName}
         />
         <Card
           icon={CalendarClock}
           label="Prazo"
-          value={`${simulationData.goalDeadLine} meses`}
-          subtitle={'Prazo para atingir a meta'}
+          value={`${data.goalDeadLine} meses`}
+          subtitle="Prazo para atingir a meta"
         />
         <Card
           variant="primary"
           icon={PiggyBank}
           label="Economia mensal"
           value={`R$ ${monthlySavings.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}
-          subtitle={'Economia mensal necessária'}
+          subtitle="Economia mensal necessária"
         />
       </div>
 
@@ -57,20 +61,20 @@ export function SimulandoResultsPage() {
           <Card
             icon={Wallet}
             label="Renda mensal"
-            value={simulationData.income}
-            subtitle={'Renda total bruta por mês'}
+            value={data.income}
+            subtitle="Renda total bruta por mês"
           />
           <Card
             icon={CreditCardIcon}
             label="Custos Fixos de Vida"
-            value={simulationData.expenses}
-            subtitle={'Gastos essenciais por mês'}
+            value={data.expenses}
+            subtitle="Gastos essenciais por mês"
           />
           <Card
             icon={Landmark}
             label="Dívidas / Parcelas"
-            value={simulationData.debts}
-            subtitle={'Valor comprometido em parcelas/depósito'}
+            value={data.debts}
+            subtitle="Valor comprometido em parcelas/depósito"
           />
         </div>
 

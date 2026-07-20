@@ -9,15 +9,11 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: (
-          <>
-            <SimulationFormPage />
-          </>
-        ),
+        element: <SimulationFormPage />,
       },
       {
-        path: '/resultado',
-        element:  <SimulandoResultsPage />,
+        path: '/resultado/:id',
+        element: <SimulandoResultsPage />,
       },
       {
         path: '/historico',
