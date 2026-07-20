@@ -31,18 +31,15 @@ export const useSimulationStorage = () => {
     return savedData.find((record) => record.id === id) || null
   }
 
-  const updateSimulation = (id: string, partial: Partial<SimulationRecord>) => {
+  const updateSimulation = (id: string, data: SimulationRecord) => {
     const storage = localStorage.getItem(LOCAL_STORAGE_KEY)
-    if (!storage) return false
+    const savedData = storage ? (JSON.parse(storage) as SimulationRecord[]) : []
 
-    const savedData = JSON.parse(storage) as SimulationRecord[]
-    const index = savedData.findIndex((r) => r.id === id)
-    if (index === -1) return false
-
-    savedData[index] = { ...savedData[index], ...partial }
-
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(savedData))
-    return true
+    const updated = savedData.map((record) =>
+      record.id === id ? {...data} : record,
+  )
+  
+  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updated))
   }
 
   return { saveFormData, getFormData, updateSimulation }
