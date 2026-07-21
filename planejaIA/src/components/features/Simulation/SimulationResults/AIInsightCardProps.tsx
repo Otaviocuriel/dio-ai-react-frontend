@@ -1,7 +1,11 @@
+import 'react-loading-skeleton/dist/skeleton.css'
+
+import Skeleton from 'react-loading-skeleton'
+
 import { useInsight } from '@/hooks/useInsight'
 
-import { Content } from '@/components/features/Simulation/Insights/Content'
-import { Error } from '@/components/features/Simulation/Insights/Error'
+import { Content } from '../Insights/Content'
+import { Error } from '../Insights/Error'
 
 interface AIInsightCardProps {
   simulationId: string
@@ -21,10 +25,15 @@ export function AIInsightsCard({ simulationId }: AIInsightCardProps) {
       </div>
 
       {isLoading && (
-        <div className="flex flex-col gap-3">
-          <div className="h-3 w-full rounded bg-slate-200/80" />
-          <div className="h-3 w-4/5 rounded bg-slate-200/80" />
-          <div className="h-3 w-3/5 rounded bg-slate-200/80" />
+        <div className="flex">
+          <Skeleton
+            count={10.5}
+            baseColor="var(--color-skeleton-base)"
+            highlightColor="var(--color-skeleton-highlight)"
+            className="mb-3 flex rounded-lg"
+            containerClassName="flex-1"
+            inline
+          />
         </div>
       )}
       {!isLoading && error && (

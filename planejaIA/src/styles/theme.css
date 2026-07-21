@@ -12,7 +12,7 @@
     --secondary-button: #f1f5f9;
     --input: #fcfcfe;
     --skeleton-base-color: #e1e1f1;
-    --skeleton-highlight-color: #c5c5df;
+    --skeleton-highlight-color: #c5c5df; 
   }
 
   [data-theme='dark'] {

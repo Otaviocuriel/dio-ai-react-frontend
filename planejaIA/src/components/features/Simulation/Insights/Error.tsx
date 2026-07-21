@@ -1,23 +1,28 @@
-import React from 'react'
+import { Button } from '@/components/shared/Button' // <-- Aspas corrigidas aqui
+import { RefreshCw } from 'lucide-react'
 
-interface Props {
+interface ErrorProps {
   simulationId: string
   message: string
   onRetry: () => void
 }
 
-export function Error({ simulationId, message, onRetry }: Props) {
+export function Error({ simulationId, message, onRetry }: ErrorProps) {
+  if (!simulationId || !message) {
+    return null
+  }
+
   return (
-    <div className="rounded-lg border border-red-200 bg-red-50 p-4">
-      <p className="text-sm text-red-700 font-medium">{message}</p>
-      <div className="mt-3 flex items-center gap-2">
-        <button
-          className="rounded bg-red-600 px-3 py-1 text-white text-sm"
-          onClick={onRetry}
-        >
-          Tentar novamente
-        </button>
-      </div>
+    <div className="flex h-full flex-col items-center justify-center gap-3 p-6">
+      <p className="text-sm text-red-500">⚠️ {message}</p>
+      <Button
+        variant="primary"
+        className="px-6"
+        icon={RefreshCw}
+        onClick={onRetry}
+      >
+        Tentar novamente
+      </Button>
     </div>
   )
 }
