@@ -4,14 +4,16 @@ import { PageHero } from '@/components/shared/PageHero'
 // import type { SimulationRecord } from '@/data/simulation' // removido: tipo não utilizado
 import { useSimulationStorage } from '@/hooks/useSimulationStorage'
 import { calcMonthlySavings } from '@/utils/simulation'
-import { CalendarClock, CreditCardIcon, Goal, Landmark, PiggyBank, Wallet } from 'lucide-react'
-import { useParams } from 'react-router-dom'
+import { CalendarClock, CreditCardIcon, Goal, Landmark, PiggyBank, Trash2, Wallet } from 'lucide-react'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
 export function SimulandoResultsPage() {
   const { id } = useParams()
-  const { getFormData } = useSimulationStorage()
+  const navigate = useNavigate()
+  const { getFormData, getAllFormData, deleteSimulation } = useSimulationStorage()
   
   const data = id ? getFormData(id) : null 
+  const simulations = getAllFormData()
 
   if (!data) {
     return (
@@ -77,6 +79,62 @@ export function SimulandoResultsPage() {
         </div>
 
       </div>
+
+      <section className="mt-8">
+        <div className="mb-4 flex items-center justify-between gap-3">
+          <div>
+            <h2 className="text-foreground text-xl font-semibold">Histórico de Simulações</h2>
+            <p className="text-muted-foreground text-sm">Resumo das simulações salvas no seu navegador</p>
+          </div>
+          <Link className="text-primary text-sm font-semibold" to="/historico">
+            Ver histórico completo
+          </Link>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {simulations.slice().reverse().map((simulation, index) => (
+            <article key={`${simulation.id}-${index}`} className="bg-card rounded-2xl p-5 shadow-[4px_4px_18px_0px_rgba(0,0,0,0.2)]">
+              <div className="mb-3 flex items-start justify-between gap-3">
+                <div>
+                  <h3 className="text-foreground text-base font-semibold">{simulation.goalName}</h3>
+                  <p className="text-muted-foreground text-sm">{simulation.goalDeadline} meses para atingir a meta</p>
+                </div>
+                <button
+                  type="button"
+                  className="text-muted-foreground hover:text-red-500"
+                  aria-label="Excluir simulação"
+                  onClick={() => {
+                    deleteSimulation(simulation.id)
+                    if (simulation.id === data.id) {
+                      void navigate('/')
+                    }
+                  }}
+                >
+                  <Trash2 size={18} />
+                </button>
+              </div>
+              <div className="text-muted-foreground space-y-1 text-sm">
+                <p>Renda: {simulation.income}</p>
+                <p>Custos: {simulation.expenses}</p>
+                <p>Dívidas: {simulation.debts}</p>
+                <p>Meta: {simulation.goalAmount}</p>
+              </div>
+              <Link
+                className="text-primary mt-4 inline-flex text-sm font-semibold"
+                to={`/resultado/${simulation.id}`}
+              >
+                Ver detalhes
+              </Link>
+              <Link
+                className="text-amber-400 mt-4 ml-4 inline-flex text-sm font-semibold"
+                to={`/editar/${simulation.id}`}
+              >
+                Editar
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
     </main>
   )
 }

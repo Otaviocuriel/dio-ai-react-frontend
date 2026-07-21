@@ -1,7 +1,7 @@
 import { parseCurrency } from '@/utils/currency'
 import { calcMonthlySavings } from '@/utils/simulation'
 
-import type { SimulationRecord } from './simulation'
+import type { ChatMessage, SimulationRecord } from './simulation'
 
 const RESPONSE_SCHEMA = `{
   "feasibility": {
@@ -63,4 +63,49 @@ export function buildAIPrompt(simulation: SimulationRecord) {
       - "viable": saldo após reserva para a meta é maior ou igual a 0
       - "needs_adjustment": saldo negativo de até 20% do valor da economia mensal necessária
       - "unfeasible": saldo negativo superior a 20% do valor da economia mensal necessária`
+}
+
+const formatConversation = (conversation: ChatMessage[]) =>
+  conversation
+    .map((message) => `${message.role === 'user' ? 'Usuário' : 'Educador financeiro'}: ${message.content}`)
+    .join('\n')
+
+export function buildFinancialQuestionPrompt(
+  simulation: SimulationRecord,
+  insight: string,
+  question: string,
+  conversation: ChatMessage[],
+) {
+  const { income, expenses, debts, goalName, goalAmount, goalDeadline } = simulation
+
+  const monthlySavings = calcMonthlySavings(simulation)
+  const monthlySavingsNeeded = parseCurrency(goalAmount) / parseInt(goalDeadline)
+
+  return `Você é um educador financeiro que conversa com um usuário dentro de um app.
+Responda de forma clara, curta, didática e natural, em português do Brasil, usando segunda pessoa.
+Baseie a resposta na simulação atual e no diagnóstico já gerado. Não retorne JSON, não use blocos de código e não crie alertas desnecessários.
+
+Dados da simulação:
+- Renda mensal bruta: ${income}
+- Custos fixos essenciais: ${expenses}
+- Dívidas e parcelas mensais: ${debts}
+- Valor disponível por mês: ${monthlySavings} reais
+- Meta: ${goalName}
+- Custo da meta: ${goalAmount}
+- Prazo desejado: ${goalDeadline} meses
+- Economia mensal necessária: ${monthlySavingsNeeded} reais
+
+Diagnóstico já gerado:
+${insight}
+
+Histórico da conversa:
+${conversation.length > 0 ? formatConversation(conversation) : 'Sem conversa anterior.'}
+
+Pergunta do usuário:
+${question}
+
+Regras:
+- Responda objetivamente, com no máximo 2 parágrafos curtos
+- Se a pergunta pedir cálculo, use os dados acima
+- Se a pergunta sair do escopo da simulação, avise com educação e traga uma orientação prática relacionada`
 }

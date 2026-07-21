@@ -1,4 +1,4 @@
-import { useState, type SyntheticEvent } from 'react'
+import { useEffect, useState, type SyntheticEvent } from 'react'
 import { Button } from '@/components/shared/Button'
 import { Input, type InputProps } from '@/components/shared/Input'
 import { ArrowLeft, ArrowRight, type LucideIcon } from 'lucide-react'
@@ -20,6 +20,7 @@ interface ActionsButtonProps {
   onBack: () => void
   onNext: (value: string) => void
   HideBackButton?: boolean
+  initialValue?: string
 }
 
 export function FormStep({
@@ -31,8 +32,13 @@ export function FormStep({
   HideBackButton,
   onBack,
   onNext,
+  initialValue = '',
 }: FormStepProps & ActionsButtonProps) {
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState(initialValue)
+
+  useEffect(() => {
+    setInputValue(initialValue)
+  }, [initialValue])
 
   const handleSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault()
