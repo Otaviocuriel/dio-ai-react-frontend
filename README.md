@@ -74,7 +74,6 @@ Durante o bootcamp, são abordados conceitos fundamentais e avançados de React,
 | Projeto | Descrição | Tecnologias |
 |---------|-----------|-------------|
 | **Planej.ai** | Aplicação de planejamento financeiro que utiliza Inteligência Artificial para gerar análises personalizadas. | React, TypeScript, Tailwind CSS, Gemini API |
-| *(Novos projetos serão adicionados durante o bootcamp.)* | | |
 
 ---
 
